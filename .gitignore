@@ -3,3 +3,6 @@ npm-debug.log*
 .DS_store
 app/*.js
 app/*.js.map
+
+_out
+dist
