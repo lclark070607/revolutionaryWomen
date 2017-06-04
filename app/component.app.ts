@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ArtistItemComponent } from './component.artist-item';
 
 export class Artist {
@@ -10,15 +10,17 @@ export class Artist {
 
 @Component({
   selector: 'app',
-  templateUrl: './partials/app.html',
-  styleUrls: [ "./css/app.css" ] 
+  templateUrl: '../partials/app.html',
+  styleUrls: [ "../css/app.css" ] 
 })
 
 export class AppComponent {
   artists = ARTISTS;
   currentArtist: Artist;
 
-  showArtist(item) {
+  @Input() query: string = null;
+
+  showArtist(item : Artist) {
     this.currentArtist = item;
   }
 }
